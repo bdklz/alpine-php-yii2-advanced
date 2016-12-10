@@ -1,8 +1,88 @@
-FROM webhippie/php-nginx
+FROM alpine:edge
+MAINTAINER Etopian Inc. <contact@etopian.com>
+
+
+RUN apk update && apk upgrade && \
+  apk add \
+    openssl \
+    ca-certificates \
+    curl \
+    bash \
+    bash-completion \
+    ncurses \
+    vim \
+    gettext \
+    logrotate \
+    tar \
+    rsync \
+    shadow \
+    s6 \
+    nginx \
+    mailcap \
+    php5-apcu \
+    php5-dev \
+    php5-bcmath \
+    php5-fpm \
+    php5-cli \
+    php5-ctype \
+    php5-curl \
+    php5-dom \
+    php5-gd \
+    php5-gettext \
+    php5-gmp \
+    php5-iconv \
+    php5-intl \
+    php5-json \
+    php5-mcrypt \
+    php5-memcache \
+    php5-mysql \
+    php5-mysqli \
+    php5-openssl \
+    php5-opcache \
+    php5-pdo \
+    php5-pdo_mysql \
+    php5-pear \
+    php5-pgsql \
+    php5-phar \
+    php5-mcrypt \ 
+    php5-exif \
+    php5-xmlreader \
+    php5-sqlite3 \
+    php5-xml \
+    php5-xsl \
+    php5-dom \
+    php5-zip \
+    php5-libsodium \ 
+    php5-redis \ 
+    php5-dev \
+    autoconf \
+    build-base \
+    git \
+    php5-zlib && \
+    rm -rf \
+      /var/cache/apk/* && \
+    rm -rf \
+      /etc/nginx/* && \
+  mkdir /etc/logrotate.docker.d
+
+
+ENV TERM=xterm PHP_MEMORY_LIMIT=512M PHP_POST_MAX_SIZE=2G PHP_UPLOAD_MAX_FILESIZE=2G PHP_MAX_EXECUTION_TIME=3600 PHP_MAX_INPUT_TIME=3600 PHP_DATE_TIMEZONE=UTC PHP_LOG_LEVEL=warning PHP_MAX_CHILDREN=75 PHP_MAX_REQUESTS=500 PHP_PROCESS_IDLE_TIMEOUT=10s NGINX_WORKER_PROCESSES=5 NGINX_WORKER_CONNECTIONS=4096 NGINX_SENDFILE=on NGINX_TCP_NOPUSH=on LOGSTASH_ENABLED=false  HOST_FRONT=frontend.dev HOST_BACK=backend.dev
+
+
+
+ADD rootfs /
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY yii2nginx.conf /etc/nginx/presets/default.conf
 COPY setup /etc/s6/nginx/setup
 
-ENV HOST_FRONT frontend.dev
-ENV HOST_BACK backend.dev
+RUN curl -sS https://getcomposer.org/installer \
+  | php -- --install-dir=/usr/bin --filename=composer
+
+EXPOSE 80
+
+WORKDIR /app
+CMD ["/bin/s6-svscan", "/etc/s6"]
+
+
+
