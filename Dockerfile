@@ -1,6 +1,5 @@
 FROM alpine:edge
 MAINTAINER Etopian Inc. <contact@etopian.com>
-LABEL version="1.1"
 
 RUN apk update && apk upgrade && \
   apk add \
