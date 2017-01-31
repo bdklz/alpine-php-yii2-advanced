@@ -1,27 +1,21 @@
-# PHP Nginx
+# Yii2 Advanced Nginx PHP7 PHP-FPM
 
-[![](https://badge.imagelayers.io/webhippie/php-nginx:latest.svg)](https://imagelayers.io/?images=webhippie/php-nginx:latest 'Get your own badge on imagelayers.io')
+## Modules
 
-These are docker images for [PHP](https://secure.php.net) running on an
-[Nginx container](https://registry.hub.docker.com/u/webhippie/nginx/).
+redis
+libsodium
 
-
-## Versions
-
-* [latest](https://github.com/dockhippie/php/tree/master/nginx)
-  available as ```webhippie/php-nginx:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/php-nginx/)
+Pecl is fixed so if you need to install additional modules you can use pecl.
 
 
 ## Volumes
 
-* /srv/www
-* /etc/php7/custom.d
+* /app
 
 
 ## Ports
 
-* 8080
+* 80
 
 
 ## Available environment variables
@@ -67,7 +61,7 @@ Fork -> Patch -> Push -> Pull Request
 
 
 ## Authors
-
+* [Etopian Inc](https://github.com/etopian)
 * [Thomas Boerger](https://github.com/tboerger)
 * [Christoph Wiechert](https://github.com/psi-4ward)
 
@@ -80,5 +74,6 @@ MIT
 ## Copyright
 
 ```
+Copyright (c) 2016-2017 Etopian Inc <https://www.etopian.com>
 Copyright (c) 2015-2016 Thomas Boerger <http://www.webhippie.de>
 ```
