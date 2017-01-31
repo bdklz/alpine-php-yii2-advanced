@@ -7,6 +7,18 @@ libsodium
 
 Pecl is fixed so if you need to install additional modules you can use pecl.
 
+Can use with multiple sites using our proxy container
+
+https://github.com/etopian/nginx-proxy
+
+Use this to enable SSL with our proxy container:
+
+https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion
+
+
+Example on how to deploy using our Nginx proxy container and the let's encrypt proxy companion:
+
+docker run -d --name=$CONTAINER_NAME -e "LETSENCRYPT_HOST=domain1.etopian.com,domain2.etopian.com" -e "LETSENCRYPT_EMAIL=contact@mydomain.com" -e VIRTUAL_HOST=domain1.etopian.com,domain2.etopian.com -eYII_DEBUG=$YII_DEBUG -eYII_ENV=$YII_ENV -e HOST_FRONT=domain1.etopian.com -e HOST_BACK=domain2.etopian.com -v /data/sites/etopian.com/htdocs:/app etopian/alpine-php-yii2-advanced:latest
 
 ## Volumes
 
