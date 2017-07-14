@@ -52,6 +52,8 @@ RUN apk update && apk upgrade && \
     php7-mbstring \
     php7-session \
     php7-apcu \
+    php7-redis \
+    php7-libsodium \
     autoconf \
     build-base \
     libsodium-dev \
@@ -74,7 +76,8 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY yii2nginx.conf /etc/nginx/presets/default.conf
 COPY setup /etc/s6/nginx/setup
 
-RUN ln -s /usr/bin/php7 /usr/bin/php && sed -ie 's/-n//g' /usr/bin/pecl && pecl install libsodium && pecl install redis-3.1.3RC2
+RUN ln -s /usr/bin/php7 /usr/bin/php && sed -ie 's/-n//g' /usr/bin/pecl && curl -sS https://getcomposer.org/installer \
+  | php -- --install-dir=/usr/bin --filename=composer
 
 
 EXPOSE 80
