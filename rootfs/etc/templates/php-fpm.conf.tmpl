@@ -5,12 +5,12 @@ log_level = {{ envString "LOG_LEVEL" }}
 daemonize = no
 
 [www]
-user = nginx
-group = nginx
+user = nobody
+group = nobody
 
 listen = 127.0.0.1:9000
-listen.owner = nginx
-listen.group = nginx
+listen.owner = nobody
+listen.group = nobody
 
 pm = ondemand
 pm.max_children = {{ envString "MAX_CHILDREN" }}
