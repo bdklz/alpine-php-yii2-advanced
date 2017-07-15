@@ -59,8 +59,8 @@ do
     "/etc/php7/custom.d/${RELATIVENAME}"
 done
 
-chown -R nginx:nginx \
-  /app
+# chown -R nginx:nginx \
+#   /app
 
 pushd /app > /dev/null
   # if [ -f composer.json ]
