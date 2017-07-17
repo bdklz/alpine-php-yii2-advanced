@@ -38,6 +38,8 @@ RUN apk update && apk upgrade && \
     php7-gmp \
     php7-iconv \
     php7-intl \
+    php7-tokenizer \
+    php7-fileinfo \
     php7-json \
     php7-mcrypt \
     php7-mysqli \
