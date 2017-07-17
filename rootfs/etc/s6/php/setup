@@ -59,7 +59,7 @@ do
     "/etc/php7/custom.d/${RELATIVENAME}"
 done
 
-chown -R nobody:nobody \
+chown -R nginx:nginx \
   /app
 
 pushd /app > /dev/null
@@ -68,7 +68,7 @@ pushd /app > /dev/null
     if [ -n "${GITHUB_TOKEN}" ]
     then
       /usr/bin/gosu \
-        nobody \
+        nginx \
         /usr/bin/composer \
         config \
         -n \
@@ -80,7 +80,7 @@ pushd /app > /dev/null
     until [ $n -ge 5 ]
     do
       /usr/bin/gosu \
-        nobody \
+        nginx \
         /usr/bin/composer \
         install \
         --no-dev \

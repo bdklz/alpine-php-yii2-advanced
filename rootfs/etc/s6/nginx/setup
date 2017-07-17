@@ -28,6 +28,6 @@ then
   /bin/s6-svscanctl -t /etc/s6
 fi
 
-chown -R nobody:nobody \
+chown -R nginx:nginx \
   /app \
   /var/lib/nginx
