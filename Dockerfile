@@ -52,6 +52,7 @@ RUN apk update && apk upgrade && \
     php7-mbstring \
     php7-session \
     php7-apcu \
+    php7-simplexml \
     autoconf \
     build-base \
     libsodium-dev \
