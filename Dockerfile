@@ -58,6 +58,7 @@ RUN apk update && apk upgrade && \
     php7-xml \
     php7-xsl \
     php7-dom \
+    php7-sockets \
     php7-zip \
     php7-dev \
     php7-mbstring \
