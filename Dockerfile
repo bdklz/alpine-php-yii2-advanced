@@ -1,6 +1,5 @@
-FROM alpine:3.6
-MAINTAINER Etopian Inc. <contact@etopian.com>
-
+FROM alpine:3.8
+LABEL maintainer="Coffee <chinaphp.com@gmail.com>"
 
 # https://github.com/matriphe/docker-alpine-php/blob/master/7.0/FPM/Dockerfile
 # Environments
