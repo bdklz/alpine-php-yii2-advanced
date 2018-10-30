@@ -62,35 +62,35 @@ done
 chown -R nginx:nginx \
   /app
 
-pushd /app > /dev/null
-  if [ -f composer.json ]
-  then
-    if [ -n "${GITHUB_TOKEN}" ]
-    then
-      /usr/bin/gosu \
-        nginx \
-        /usr/bin/composer \
-        config \
-        -n \
-        -g github-oauth.github.com \
-        ${GITHUB_TOKEN}
-    fi
+# pushd /app > /dev/null
+#   if [ -f composer.json ]
+#   then
+#     if [ -n "${GITHUB_TOKEN}" ]
+#     then
+#       /usr/bin/gosu \
+#         nginx \
+#         /usr/bin/composer \
+#         config \
+#         -n \
+#         -g github-oauth.github.com \
+#         ${GITHUB_TOKEN}
+#     fi
 
-    n=0
-    until [ $n -ge 5 ]
-    do
-      /usr/bin/gosu \
-        nginx \
-        /usr/bin/composer \
-        install \
-        --no-dev \
-        --no-scripts \
-        -n \
-        -q \
-        --working-dir /app && break
+#     n=0
+#     until [ $n -ge 5 ]
+#     do
+#       /usr/bin/gosu \
+#         nginx \
+#         /usr/bin/composer \
+#         install \
+#         --no-dev \
+#         --no-scripts \
+#         -n \
+#         -q \
+#         --working-dir /app && break
 
-        n=$(($n+1))
-        sleep 3
-    done
-  fi
-popd > /dev/null
+#         n=$(($n+1))
+#         sleep 3
+#     done
+#   fi
+# popd > /dev/null
