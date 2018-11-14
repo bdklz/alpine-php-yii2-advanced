@@ -88,7 +88,7 @@ COPY setup /etc/s6/nginx/setup
 
 
 RUN  sed -ie 's/-n//g' /usr/bin/pecl && pecl install libsodium && pecl install redis && curl -sS https://getcomposer.org/installer \
-  | php -- --install-dir=/usr/bin --filename=composer
+  | php -- --install-dir=/usr/bin --filename=composer && composer global require hirak/prestissimo
 
 
 EXPOSE 80
