@@ -17,7 +17,6 @@ RUN apk update && apk upgrade && \
     bash-completion \
     ncurses \
     vim \
-    gnu-libiconv \
     gettext \
     logrotate \
     tar \
@@ -77,6 +76,8 @@ RUN apk update && apk upgrade && \
       /etc/nginx/* && \
   mkdir /etc/logrotate.docker.d
 
+RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
+ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so
 
 ENV TERM=xterm PHP_MEMORY_LIMIT=512M PHP_POST_MAX_SIZE=2G PHP_UPLOAD_MAX_FILESIZE=2G PHP_MAX_EXECUTION_TIME=3600 PHP_MAX_INPUT_TIME=3600 PHP_DATE_TIMEZONE=PRC PHP_LOG_LEVEL=warning PHP_MAX_CHILDREN=75 PHP_MAX_REQUESTS=500 PHP_PROCESS_IDLE_TIMEOUT=10s NGINX_WORKER_PROCESSES=5 NGINX_WORKER_CONNECTIONS=4096 NGINX_SENDFILE=on NGINX_TCP_NOPUSH=on LOGSTASH_ENABLED=false  HOST_FRONT=frontend.dev HOST_BACK=backend.dev DB_NAME=user DB_USER=user DB_PASS=pass DB_PORT=3306 DB_HOST=172.17.0.1 REDIS_HOST=172.17.0.1 REDIS_PORT=6379 REDIS_DB=0
 
