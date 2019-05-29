@@ -17,6 +17,7 @@ RUN apk update && apk upgrade && \
     bash-completion \
     ncurses \
     vim \
+    gnu-libiconv \
     gettext \
     logrotate \
     tar \
