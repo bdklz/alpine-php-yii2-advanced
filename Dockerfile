@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:latest
 MAINTAINER Etopian Inc. <contact@etopian.com>
 
 RUN apk update && apk upgrade && \
