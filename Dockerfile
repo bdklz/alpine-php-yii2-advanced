@@ -1,9 +1,9 @@
-FROM alpine:3.8
-LABEL maintainer="Coffee <chinaphp.com@gmail.com>"
 
-# https://github.com/matriphe/docker-alpine-php/blob/master/7.0/FPM/Dockerfile
-# Environments
+FROM alpine:latest
+MAINTAINER Etopian Inc. <contact@etopian.com>
+
 ENV TIMEZONE            Asia/Shanghai
+
 
 RUN apk update && apk upgrade && \
   apk add --update tzdata && \
@@ -70,8 +70,8 @@ RUN apk update && apk upgrade && \
     git \
     dcron \
     php7-zlib \
-    && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted \
-    gnu-libiconv \
+    # && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted \
+    # gnu-libiconv \
     && rm -rf \
       /var/cache/apk/* && \
     rm -rf \
@@ -90,8 +90,10 @@ COPY yii2nginx.conf /etc/nginx/presets/default.conf
 COPY setup /etc/s6/nginx/setup
 
 
+
 RUN  sed -ie 's/-n//g' /usr/bin/pecl && pecl install libsodium && pecl install redis && curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/bin --filename=composer && composer global require hirak/prestissimo
+
 
 
 EXPOSE 80
