@@ -73,6 +73,7 @@ Fork -> Patch -> Push -> Pull Request
 
 
 ## Authors
+* [ChinaPHP](https://github.com/chinaphp)
 * [Etopian Inc](https://github.com/etopian)
 * [Thomas Boerger](https://github.com/tboerger)
 * [Christoph Wiechert](https://github.com/psi-4ward)
