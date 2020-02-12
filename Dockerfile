@@ -1,5 +1,5 @@
-# FROM geekidea/alpine-a:3.10
-FROM alpine:3.10
+FROM geekidea/alpine-a:3.10
+# FROM alpine:3.10
 MAINTAINER Etopian Inc. <contact@etopian.com>
 
 ENV TIMEZONE            Asia/Shanghai
@@ -87,8 +87,6 @@ ADD rootfs /
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY yii2nginx.conf /etc/nginx/presets/default.conf
 COPY setup /etc/s6/nginx/setup
-COPY lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1
-
 
 
 RUN  sed -ie 's/-n//g' /usr/bin/pecl && pecl channel-update pecl.php.net && pecl install libsodium && pecl install redis && curl -sS https://getcomposer.org/installer \
