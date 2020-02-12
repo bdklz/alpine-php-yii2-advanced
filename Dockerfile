@@ -5,7 +5,7 @@ MAINTAINER Etopian Inc. <contact@etopian.com>
 ENV TIMEZONE            Asia/Shanghai
 
 
-RUN apk update && apk upgrade && \
+RUN apk update && \
   apk add --update tzdata && \
     cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
     echo "${TIMEZONE}" > /etc/timezone && \
