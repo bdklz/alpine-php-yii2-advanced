@@ -25,51 +25,51 @@ RUN apk update && \
     s6 \
     nginx \
     mailcap \
-    php7-apcu \
-    php7-dev \
-    php7-bcmath \
-    php7-fpm \
-    php7-ctype \
-    php7-curl \
-    php7-dom \
-    php7-gd \
-    php7-gettext \
-    php7-gmp \
-    php7-iconv \
-    php7-intl \
-    php7-tokenizer \
-    php7-fileinfo \
-    php7-xmlwriter \
-    php7-json \
-    php7-mcrypt \
-    php7-mysqli \
-    php7-openssl \
-    php7-opcache \
-    php7-pdo \
-    php7-pdo_mysql \
-    php7-pear \
-    php7-pgsql \
-    php7-phar \
-    php7-mcrypt \ 
-    php7-exif \
-    php7-xmlreader \
-    php7-sqlite3 \
-    php7-xml \
-    php7-xsl \
-    php7-dom \
-    php7-sockets \
-    php7-zip \
-    php7-dev \
-    php7-mbstring \
-    php7-session \
-    php7-apcu \
-    php7-simplexml \
+    php7.1-apcu \
+    php7.1-dev \
+    php7.1-bcmath \
+    php7.1-fpm \
+    php7.1-ctype \
+    php7.1-curl \
+    php7.1-dom \
+    php7.1-gd \
+    php7.1-gettext \
+    php7.1-gmp \
+    php7.1-iconv \
+    php7.1-intl \
+    php7.1-tokenizer \
+    php7.1-fileinfo \
+    php7.1-xmlwriter \
+    php7.1-json \
+    php7.1-mcrypt \
+    php7.1-mysqli \
+    php7.1-openssl \
+    php7.1-opcache \
+    php7.1-pdo \
+    php7.1-pdo_mysql \
+    php7.1-pear \
+    php7.1-pgsql \
+    php7.1-phar \
+    php7.1-mcrypt \ 
+    php7.1-exif \
+    php7.1-xmlreader \
+    php7.1-sqlite3 \
+    php7.1-xml \
+    php7.1-xsl \
+    php7.1-dom \
+    php7.1-sockets \
+    php7.1-zip \
+    php7.1-dev \
+    php7.1-mbstring \
+    php7.1-session \
+    php7.1-apcu \
+    php7.1-simplexml \
     autoconf \
     build-base \
     libsodium-dev \
     git \
     dcron \
-    php7-zlib \
+    php7.1-zlib \
     # && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted \
     # gnu-libiconv \
     && rm -rf \
@@ -98,6 +98,3 @@ EXPOSE 80
 
 WORKDIR /app
 CMD ["/bin/s6-svscan", "/etc/s6"]
-
-
-
