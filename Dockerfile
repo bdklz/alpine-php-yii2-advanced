@@ -25,51 +25,51 @@ RUN apk update && \
     s6 \
     nginx \
     mailcap \
-    php7.1-apcu \
-    php7.1-dev \
-    php7.1-bcmath \
-    php7.1-fpm \
-    php7.1-ctype \
-    php7.1-curl \
-    php7.1-dom \
-    php7.1-gd \
-    php7.1-gettext \
-    php7.1-gmp \
-    php7.1-iconv \
-    php7.1-intl \
-    php7.1-tokenizer \
-    php7.1-fileinfo \
-    php7.1-xmlwriter \
-    php7.1-json \
-    php7.1-mcrypt \
-    php7.1-mysqli \
-    php7.1-openssl \
-    php7.1-opcache \
-    php7.1-pdo \
-    php7.1-pdo_mysql \
-    php7.1-pear \
-    php7.1-pgsql \
-    php7.1-phar \
-    php7.1-mcrypt \ 
-    php7.1-exif \
-    php7.1-xmlreader \
-    php7.1-sqlite3 \
-    php7.1-xml \
-    php7.1-xsl \
-    php7.1-dom \
-    php7.1-sockets \
-    php7.1-zip \
-    php7.1-dev \
-    php7.1-mbstring \
-    php7.1-session \
-    php7.1-apcu \
-    php7.1-simplexml \
+    php7-apcu-7.1.5-r0 \
+    php7-dev-7.1.5-r0 \
+    php7-bcmath-7.1.5-r0 \
+    php7-fpm-7.1.5-r0 \
+    php7-ctype-7.1.5-r0 \
+    php7-curl-7.1.5-r0 \
+    php7-dom-7.1.5-r0 \
+    php7-gd-7.1.5-r0 \
+    php7-gettext-7.1.5-r0 \
+    php7-gmp-7.1.5-r0 \
+    php7-iconv-7.1.5-r0 \
+    php7-intl-7.1.5-r0 \
+    php7-tokenizer-7.1.5-r0 \
+    php7-fileinfo-7.1.5-r0 \
+    php7-xmlwriter-7.1.5-r0 \
+    php7-json-7.1.5-r0 \
+    php7-mcrypt-7.1.5-r0 \
+    php7-mysqli-7.1.5-r0 \
+    php7-openssl-7.1.5-r0 \
+    php7-opcache-7.1.5-r0 \
+    php7-pdo-7.1.5-r0 \
+    php7-pdo_mysql-7.1.5-r0 \
+    php7-pear-7.1.5-r0 \
+    php7-pgsql-7.1.5-r0 \
+    php7-phar-7.1.5-r0 \
+    php7-mcrypt -7.1.5-r0\ 
+    php7-exif-7.1.5-r0 \
+    php7-xmlreader-7.1.5-r0 \
+    php7-sqlite3-7.1.5-r0 \
+    php7-xml-7.1.5-r0 \
+    php7-xsl-7.1.5-r0 \
+    php7-dom-7.1.5-r0 \
+    php7-sockets-7.1.5-r0 \
+    php7-zip-7.1.5-r0 \
+    php7-dev-7.1.5-r0 \
+    php7-mbstring-7.1.5-r0 \
+    php7-session-7.1.5-r0 \
+    php7-apcu-7.1.5-r0 \
+    php7-simplexml-7.1.5-r0 \
     autoconf \
     build-base \
     libsodium-dev \
     git \
     dcron \
-    php7.1-zlib \
+    php7-zlib-7.1.5-r0 \
     # && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted \
     # gnu-libiconv \
     && rm -rf \
